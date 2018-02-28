@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Item</title>
+</head>
+<body>
+
+	<h3>{{ this_item.added_by.name  }} item(s)</h3>
+	<a href="/first_app/success">Home</a>
+	<a href="/first_templates/logout">Logout</a>
+	 <br><br>
+	<h1>Item/Product: {{ this_item.item}}</h1>
+
+
+	<h3>Users who added this item/product under their wish list:</h3>
+	{% for user in all_users %}
+		  <tr>
+		    <td>{{ wish.added_by.name }}</td>
+		  </tr>
+		 {% endfor %}
+		 
+
+</body>
+</html>

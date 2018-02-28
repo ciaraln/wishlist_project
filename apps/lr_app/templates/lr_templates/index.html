@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Welcome to Wish List</title>
+  </head>
+  <body>
+    {% if messages %}
+    <ul class="messages">
+      {% for message in messages %}
+      <li {% if message.tags %} class="{{ message.tags }}" {% endif %}> {{ message }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+      <h1>Welcome to Wish List</h1>
+      <div class="container">
+      <br>
+        <fieldset>
+          <legend>Registration</legend>
+            <form action='/lr_app/register' method='post'>
+              {% csrf_token %}
+
+                Name:<input type="text" name="name" placeholder="Name"><br> 
+                Usename:<input type="text" name="usename" placeholder="Usename"><br>
+                Password:<input type="password" name="password" placeholder="Password"><br>
+                Confirm Password:<input type="password" name="passwordcheck"><br>
+              <input type="submit" name="created_user" value="Create">
+            </form>
+          </fieldset>
+
+
+          <fieldset>
+            <legend>Login</legend>
+              <form action='/lr_app/login' method='post'>
+              {% csrf_token %}
+                Usename:<input type="text" name="usename" placeholder="Usename"><br>
+                Password:<input type="password" name="password" placeholder="Password"> <br><br>
+              <input type="submit" value="Login">
+              </form>
+          </fieldset>
+      
+    </div>
+  </body>
+</html>
